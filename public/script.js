@@ -201,7 +201,8 @@ addToBlackMarketCartButton.addEventListener("click", () => {
       if (existingCartItem.quantity >= 2) {
         existingCartItem.quantity = 2;
         alert("Sorry! You're only allowed 2 of each item from our trader!");
-      } else {
+      } else { 
+    
         existingCartItem.quantity += 1;
       }
     } else {
