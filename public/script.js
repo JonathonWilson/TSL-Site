@@ -143,9 +143,9 @@ addToCartButton.addEventListener("click", () => {
     );
     if (existingCartItem) {
       // If the item is already in the cart, check its quantity
-        existingCartItem.quantity = quantity+existingCartItem.quantity;
+      existingCartItem.quantity = quantity + existingCartItem.quantity;
     } else {
-      const cartItem = { ...selectedItem, quantity: quantity }; 
+      const cartItem = { ...selectedItem, quantity: quantity };
       cart.push(cartItem);
     }
     updateCartDisplay();
@@ -166,10 +166,11 @@ addToSellableCartButton.addEventListener("click", () => {
       (item) => item.name === selectedItemName
     );
     if (existingCartItem) {
-      existingCartItem.quantity = parseInt(sellableQuantityInput.value)+existingCartItem.quantity;
+      existingCartItem.quantity =
+        parseInt(sellableQuantityInput.value) + existingCartItem.quantity;
     } else {
       // If the item is not in the cart, add it (use the same cartItem structure)
-      const cartItem = { ...selectedItem, quantity: quantity }; 
+      const cartItem = { ...selectedItem, quantity: quantity };
       cart.push(cartItem);
     }
     updateCartDisplay();
@@ -189,7 +190,7 @@ addToBlackMarketCartButton.addEventListener("click", () => {
       (item) => item.name === selectedItemName
     );
     if (existingCartItem) {
-        existingCartItem.quantity = quantity+existingCartItem.quantity;
+      existingCartItem.quantity = quantity + existingCartItem.quantity;
     } else {
       const cartItem = { ...selectedItem, quantity: quantity };
       cart.push(cartItem);
@@ -197,8 +198,6 @@ addToBlackMarketCartButton.addEventListener("click", () => {
     updateCartDisplay();
   }
 });
-
-
 
 function updateCartDisplay() {
   cartList.innerHTML = "";
@@ -211,11 +210,12 @@ function updateCartDisplay() {
       cartItem.price * cartItem.quantity
     }`;
 
-    // Create a "Remove" button with a material icon
+    // Create a "Remove" button with a material icon(Or just "delete" cuz that looks better)
     const removeButton = document.createElement("button");
     removeButton.classList.add("custom-remove-button");
     removeButton.innerHTML =
-      '<span class="material-symbols-sharp">delete</span>';
+      '<span class="material-symbols-sharp">Delete</span>';
+    removeButton.style = "width: 3.5rem; height: 1.75rem;";
     removeButton.addEventListener("click", () => removeItemFromCart(index));
     li.appendChild(removeButton);
 
@@ -238,7 +238,8 @@ function updateCartDisplay() {
       const removeButton = document.createElement("button");
       removeButton.classList.add("custom-remove-button");
       removeButton.innerHTML =
-        '<span class="material-symbols-sharp">delete</span>';
+        '<span class="material-symbols-sharp">Delete</span>';
+      removeButton.style = "width: 3.5rem; height: 1.75rem;";
       removeButton.addEventListener("click", () =>
         removeSellableItemFromCart(sellableItem)
       );
@@ -264,7 +265,8 @@ function updateCartDisplay() {
       const removeButton = document.createElement("button");
       removeButton.classList.add("custom-remove-button");
       removeButton.innerHTML =
-        '<span class="material-symbols-sharp">delete</span>';
+        '<span class="material-symbols-sharp">Delete</span>';
+      removeButton.style = "width: 3.5rem; height: 1.75rem;";
       removeButton.addEventListener("click", () =>
         removeBlackMarketItemFromCart(blackMarketItem)
       );
