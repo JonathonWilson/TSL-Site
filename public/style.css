@@ -37,6 +37,34 @@ a:hover {
   border: 0.05rem solid #fff;
 }
 
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+/* Customize the scrollbar thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the thumb */
+  border-radius: 6px; /* Round the edges of the thumb */
+}
+
+/* Customize the scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the thumb on hover */
+}
+
+/* Customize the scrollbar track when hovered */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the track */
+}
+
+/* Customize the scrollbar track when the thumb is hovered */
+::-webkit-scrollbar-track:hover {
+  background-color: #ddd; /* Color of the track on thumb hover */
+}
+
+
 /*
  * Base structure
  */
@@ -74,6 +102,10 @@ h3 {
   width: 230px;
 }
 
+#cartList {
+  max-height: 20vh;
+  overflow: auto;
+}
 
 .cover-container {
   max-width: 75em;
@@ -89,11 +121,16 @@ h3 {
   flex-direction: row; /* Set the flex direction to horizontal */
   justify-content: space-between; /* Add space between buttons */
   align-items: flex-start; /* Align items at the top of the container */
+
+}
+
+#rulesAccordion {
+max-height: 500px;
+overflow: auto;
 }
 
 .accordion {
-  background-color: #f9f9f9;
-  color: #333;
+  box-sizing: border-box;
   cursor: pointer;
   padding: 5px;
   flex: 1; /* Distribute available space equally among buttons */
@@ -106,19 +143,36 @@ h3 {
   box-sizing: border-box; /* Include padding and border in the width */
 }
 
-.active,
-.accordion:hover {
-  background-color: #ddd;
+.accordion-body{
+  box-sizing: border-box;
+  background-color:#0f020240;
+  border-radius: 7px;
+}
+
+.accordion-button {
+  background-color: #5e5c5c80;
+  border-radius: 5px;
+  color: white; /* Add text color to make it visible on dark background */
+  height: 30px;
+  display: flex; 
+  align-items: left; 
+  justify-content: space-between; /* Add space between text and icon */
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.6s;
+  outline: none;
+}
+
+.accordion.active {
+  background-color: #220e0e;
 }
 
 .panel {
-  padding: 0 18px;
-  background-color: white;
   display: none;
-  overflow: auto;
-  max-height: 500px;
-  flex: 3; /* Occupy more space for panel content */
+  flex: 3; /*Occupy more space for panel content */
   box-sizing: border-box; /* Include padding and border in the width */
+  overflow: auto; /* Enable scrolling */
+  max-height: 200px; /* Set a maximum height for the panel */
 }
 
 .panel ul {
@@ -129,17 +183,13 @@ h3 {
 .panel li {
   margin-bottom: 5px;
 }
-s
-
 
 /*
  * Header
  */
 .masthead {
   display: flex;
-  justify-content: space-between; /* Arrange items at both ends of the container */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 2rem;
+  justify-content: center; /* Arrange items at both ends of the container */
 }
 
 .masthead-brand {
@@ -222,5 +272,3 @@ s
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 9999;
 }
-
-/* Accordian rules section  */

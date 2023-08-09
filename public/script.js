@@ -91,6 +91,7 @@ const sellableItemSelect = document.getElementById("sellableItemSelect");
 const blackMarketItemSelect = document.getElementById("blackMarketItemSelect");
 const quantityInput = document.getElementById("quantityInput");
 const addToCartButton = document.getElementById("addToCartButton");
+const addToSellableCartButton = document.getElementById("addToSellableCartButton");
 const cartList = document.getElementById("cartList");
 const totalPriceDisplay = document.getElementById("totalPrice");
 const notification = document.getElementById("notification");
@@ -119,15 +120,15 @@ for (const item of sellableItems) {
   }
 }
 
-// Populate the dropdown with item names for Black Market
-for (const item of blackMarketItems) {
-  if (item.name) {
-    const option = document.createElement("option");
-    option.value = item.name;
-    option.textContent = item.name;
-    blackMarketItemSelect.appendChild(option);
+  // Populate the dropdown with item names for Black Market
+  for (const item of blackMarketItems) {
+    if (item.name) {
+      const option = document.createElement("option");
+      option.value = item.name;
+      option.textContent = item.name;
+      blackMarketItemSelect.appendChild(option);
+    }
   }
-}
 
 // add items to the normal trader cart
 addToCartButton.addEventListener("click", () => {
@@ -304,17 +305,17 @@ function removeBlackMarketItemFromCart(item) {
   }
 }
 
-// // Notification that cart is full for that item
-// function showNotification(message) {
-//   notification.querySelector("p").textContent = message;
-//   notification.classList.remove("hidden");
-// }
 
-// closeNotificationButton.addEventListener("click", () => {
-//   notification.classList.add("hidden");
-// });
-
-var accordions = document.getElementsByClassName("accordion");
+//Calculate the total of the sellables
+function calculateSellablesTotal() {
+  var total = 0;
+  for (const item of sellableCart) {
+    if (item.price) {
+      total += item.price * item.quantity;
+    }
+  }
+  return total;
+}
 
 //calculate the total of the items in  the cart
 function calculateTotal() {
@@ -330,27 +331,4 @@ function calculateTotal() {
     }
   }
   return total;
-}
-
-//Calculate the total of the sellables
-function calculateSellablesTotal() {
-  var total = 0;
-  for (const item of sellableCart) {
-    if (item.price) {
-      total += item.price * item.quantity;
-    }
-  }
-  return total;
-}
-
-for (var i = 0; i < accordions.length; i++) {
-  accordions[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
 }
