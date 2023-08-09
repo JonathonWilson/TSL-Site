@@ -51,39 +51,39 @@ const items = [
 const blackMarketItems = [
   { category: "Guns" },
   { name: "Gun", price: 1500 },
-  { category: "Attachment", price: 500 },
-  { category: "Plate Carrier", price: 1000 },
+  { name: "Attachment", price: 500 },
+  { name: "Plate Carrier", price: 1000 },
   { category: "Black Clothing" },
   { name: "BMD Top", price: 100 },
   { name: "BMD Pants", price: 100 },
   { name: "BMD Shoes", price: 50 },
   { name: "BMD Helmet", price: 100 },
-  { category: "Ghillie Suits", price: 500 },
-  { category: "NBC Suit pieces", price: 200 },
-  { category: "Ammo", price: 100 },
-  { category: "Medical Item", price: 50 },
+  { name: "Ghillie Suits", price: 500 },
+  { name: "NBC Suit pieces", price: 200 },
+  { name: "Ammo", price: 100 },
+  { name: "Medical Items", price: 50 },
   { name: "M79", price: 10000 },
 ];
 
 const sellableItems = [
   { category: "Cigarettes" },
-  { name: "Cigs: Blue", price: 500 },
-  { name: "Cigs: M20", price: 200 },
-  { name: "Cigs: Partyanka Woman", price: 100 },
+  { name: "Cigs: Blue", price: -500 },
+  { name: "Cigs: M20", price: -200 },
+  { name: "Cigs: Partyanka Woman", price: -100 },
   { category: "Teddy Bears" },
-  { name: "Pink Teddy", price: 500 },
-  { name: "Other Teddy", price: 100 },
+  { name: "Pink Teddy", price: -500 },
+  { name: "Other Teddy", price: -100 },
   { category: "Predator Pelts" },
-  { name: "Bear Pelt", price: 250 },
-  { name: "Wolf Pelt", price: 100 },
+  { name: "Bear Pelt", price: -250 },
+  { name: "Wolf Pelt", price: -100 },
   { category: "Contraband" },
-  { name: "Vodka", price: 100 },
-  { name: "Weed", price: 10 },
-  { name: "Faction Armband", price: 100 },
-  { name: "Merc Armband", price: 50 },
+  { name: "Vodka", price: -100 },
+  { name: "Weed", price: -10 },
+  { name: "Faction Armband", price: -100 },
+  { name: "Merc Armband", price: -50 },
   { category: "Guns & Plate Carrier" },
-  { name: "Tier 4 Guns", price: 250 },
-  { name: "Plate Carrier", price: 200 },
+  { name: "Tier 4 Guns", price: -250 },
+  { name: "Plate Carrier", price: -200 },
 ];
 
 const itemSelect = document.getElementById("itemSelect");
@@ -143,15 +143,9 @@ addToCartButton.addEventListener("click", () => {
     );
     if (existingCartItem) {
       // If the item is already in the cart, check its quantity
-      if (existingCartItem.quantity >= 2) {
-        //showNotification("You are only allowed to get 2 of each item, Sorry!");
-        existingCartItem.quantity = 2;
-        alert("Sorry! You're only allowed 2 of each item from our trader!");
-      } else {
-        existingCartItem.quantity += 1;
-      }
+        existingCartItem.quantity = quantity+existingCartItem.quantity;
     } else {
-      // If the item is not in the cart, add it
+      const cartItem = { ...selectedItem, quantity: quantity }; 
       cart.push(cartItem);
     }
     updateCartDisplay();
@@ -172,11 +166,10 @@ addToSellableCartButton.addEventListener("click", () => {
       (item) => item.name === selectedItemName
     );
     if (existingCartItem) {
-      // If the item is already in the cart, check its quantity
-      existingCartItem.quantity += 1;
+      existingCartItem.quantity = parseInt(sellableQuantityInput.value)+existingCartItem.quantity;
     } else {
       // If the item is not in the cart, add it (use the same cartItem structure)
-      const cartItem = { ...selectedItem, quantity: 1 }; // Set initial quantity to 1
+      const cartItem = { ...selectedItem, quantity: quantity }; 
       cart.push(cartItem);
     }
     updateCartDisplay();
@@ -190,29 +183,22 @@ addToBlackMarketCartButton.addEventListener("click", () => {
     (item) => item.name === selectedItemName
   );
   const quantity = parseInt(blackMarketQuantityInput.value);
-
   if (selectedItem && quantity > 0) {
     // Find an existing item in the cart by name
     const existingCartItem = cart.find(
       (item) => item.name === selectedItemName
     );
     if (existingCartItem) {
-      // If the item is already in the cart, check its quantity
-      if (existingCartItem.quantity >= 2) {
-        existingCartItem.quantity = 2;
-        alert("Sorry! You're only allowed 2 of each item from our trader!");
-      } else { 
-    
-        existingCartItem.quantity += 1;
-      }
+        existingCartItem.quantity = quantity+existingCartItem.quantity;
     } else {
-      // If the item is not in the cart, add it (use the same cartItem structure)
-      const cartItem = { ...selectedItem, quantity: 1 }; // Set initial quantity to 1
+      const cartItem = { ...selectedItem, quantity: quantity };
       cart.push(cartItem);
     }
     updateCartDisplay();
   }
 });
+
+
 
 function updateCartDisplay() {
   cartList.innerHTML = "";
