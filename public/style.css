@@ -1,0 +1,224 @@
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom buttons */
+#itemSelect,
+#quantityInput,
+.custom-remove-button,
+#itemSelect option,
+#blackMarketQuantityInput,
+#sellableQuantityInput,
+#blackMarketItemSelect,
+#sellableItemSelect,
+#addToCartButton,
+#addToBlackMarketCartButton,
+#addToSellableCartButton,
+#itemSelect:focus {
+  background-color: #ffffff80;
+  border: 0.05rem solid #220e0e;
+  color: #333;
+  border-radius: 7px;
+  text-shadow: none;
+  padding: 2px;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 0.05rem solid #fff;
+}
+
+/*
+ * Base structure
+ */
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  font-size: large;
+}
+
+#sellableQuantityInput, #blackMarketQuantityInput, #quantityInput {
+  width: 40px;
+}
+
+#itemSelect, #sellableItemSelect, #blackMarketItemSelect {
+  width: 230px;
+}
+
+
+.cover-container {
+  max-width: 75em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row; /* Set the flex direction to horizontal */
+  justify-content: space-between; /* Add space between buttons */
+  align-items: flex-start; /* Align items at the top of the container */
+}
+
+.accordion {
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  flex: 1; /* Distribute available space equally among buttons */
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+  display: inline-block; /* Display buttons inline */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.active,
+.accordion:hover {
+  background-color: #ddd;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: auto;
+  max-height: 500px;
+  flex: 3; /* Occupy more space for panel content */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.panel ul {
+  list-style-type: decimal;
+  margin-left: 5px;
+}
+
+.panel li {
+  margin-bottom: 5px;
+}
+s
+
+
+/*
+ * Header
+ */
+.masthead {
+  display: flex;
+  justify-content: space-between; /* Arrange items at both ends of the container */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+  order: 1;
+}
+
+.nav-masthead {
+  order: 3;
+}
+
+.nav-masthead .nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead {
+    flex-direction: row; /* Ensure horizontal layout */
+    align-items: center; /* Center items vertically */
+  }
+  .masthead-brand {
+    float: none; /* Remove floating */
+    order: 1; /* Keep the site name to the left */
+  }
+  .nav-masthead {
+    float: none; /* Remove floating */
+    order: 2; /* Keep the navigation links to the right */
+  }
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+}
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: #ffffff80;
+}
+
+.hidden {
+  display: none;
+}
+
+.alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+/* Accordian rules section  */

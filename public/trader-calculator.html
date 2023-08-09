@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Homepage for the TSL website" />
+    <meta
+      name="author"
+      content="_Ghostey on discord, JonathonWilson04@outlook.com for business inquiries"
+    />
+    <link rel="icon" href="./Assets/favicon.ico" />
+
+    <title>Calculator</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.0/examples/cover/"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h2 class="masthead-brand">The Savage Lands</h2>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="./trader-calculator.html"
+              >Calculator</a
+            >
+            <a class="nav-link" href="./about.html">About</a>
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="./rules.html">Rules</a>
+            <a class="nav-link" href="./features.html">Features</a>
+          </nav>
+        </div>
+      </header>
+      <main role="main" class="inner cover">
+        <h2>Trader Calc</h2>
+
+        <!-- Normal Trader section -->
+        <h3>Trader</h3>
+        <!-- <label for="itemSelect">Normal Trader Item:</label> -->
+        <select id="itemSelect">
+          <option value="">Select an item...</option>
+        </select>
+
+        <label for="quantityInput">Qty:</label>
+        <input type="number" id="quantityInput" value="1" min="1" />
+        <button id="addToCartButton">Add to Cart</button>
+
+        <!-- Sellables section -->
+        <h3>Sellables</h3>
+        <!-- <label for="sellableItemSelect">Sellable Item:</label> -->
+        <select id="sellableItemSelect">
+          <option value="">Select a sellable item...</option>
+        </select>
+
+        <label for="sellableQuantityInput">Qty:</label>
+        <input type="number" id="sellableQuantityInput" value="1" min="1" />
+        <button id="addToSellableCartButton">Add to Cart</button>
+
+        <!-- Black Market section -->
+        <h3>Black Market</h3>
+        <!-- <label for="blackMarketItemSelect">Black Market Item:</label> -->
+        <select id="blackMarketItemSelect">
+          <option value="">Select a BMD item...</option>
+        </select>
+        <label for="blackMarketQuantityInput">Qty:</label>
+        <input type="number" id="blackMarketQuantityInput" value="1" min="1" />
+        <button id="addToBlackMarketCartButton">Add to Cart</button>
+
+        <hr />
+        <h3>Cart</h3>
+        <ul id="cartList"></ul>
+        <p id="totalPrice">Total Price: $0</p>
+      </main>
+      <footer class="mastfoot mt-auto">
+        <p>
+          <a href="https://discord.gg/dayztsl" class="external-button" target="_blank">
+            <img src="./Assets/discord-logo.png" height="30px" />
+          </a>
+          This site is not endorsed or affiliated with/by the TSL DayZ server or
+          it's owner/staff.
+        </p>
+      </footer>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
