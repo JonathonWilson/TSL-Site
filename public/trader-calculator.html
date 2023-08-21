@@ -53,9 +53,8 @@
         <select id="itemSelect">
           <option value="">Trader Sells...</option>
         </select>
-
         <label for="quantityInput"> - </label>
-        <input type="number" id="quantityInput" value="1" min="1" max ="2"/>
+        <input type="number" id="quantityInput" value="1" min="1" max="2" />
         <button id="addToCartButton">Add to Cart</button>
 
         <!-- Sellables section -->
@@ -63,7 +62,6 @@
         <select id="sellableItemSelect">
           <option value="">Trader Buys...</option>
         </select>
-
         <label for="sellableQuantityInput"> - </label>
         <input type="number" id="sellableQuantityInput" value="1" min="1" />
         <button id="addToSellableCartButton">Add to Cart</button>
@@ -74,13 +72,16 @@
           <option value="">BMD Items...</option>
         </select>
         <label for="blackMarketQuantityInput"> - </label>
-        <input type="number" id="blackMarketQuantityInput" value="1" min="1" max="2"/>
+        <input type="number" id="blackMarketQuantityInput" value="1" min="1"/>
         <button id="addToBlackMarketCartButton">Add to Cart</button>
 
         <hr />
-        <h3>Cart</h3>
-        <ul id="cartList"></ul>
-        <p id="totalPrice">Total Price: $0</p>
+
+        <div id="cart-container">
+          <h3>Cart</h3>
+          <ul id="cartList"></ul>
+          <p id="totalPrice">Total Price: $0</p>
+        </div>
       </main>
       <footer class="mastfoot mt-auto">
         <p>
@@ -91,11 +92,9 @@
         </p>
       </footer>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script src="./script.js"></script>
   </body>
 </html>
