@@ -82,7 +82,7 @@ const sellableItems = [
   { name: "Faction Armband", price: -100 },
   { name: "Merc Armband", price: -50 },
   { category: "Guns & Plate Carrier" },
-  { name: "Tier 4 Guns", price: -250 },
+  { name: "T4 Guns", price: -250 },
   { name: "Plate Carrier", price: -200 },
 ];
 

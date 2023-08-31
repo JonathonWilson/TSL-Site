@@ -95,7 +95,7 @@ h3 {
 }
 
 #sellableQuantityInput, #blackMarketQuantityInput, #quantityInput {
-  width: 40px;
+  width:60px;
 }
 
 #itemSelect, #sellableItemSelect, #blackMarketItemSelect {
@@ -127,6 +127,14 @@ h3 {
 #rulesAccordion {
 max-height: 500px;
 overflow: auto;
+}
+
+main .blob {
+  position: absolute;
+  top: 5rem;
+  left: 3rem;
+  box-shadow: 0 0 1000px 50px #fff;
+  z-index: -100;
 }
 
 .accordion {
