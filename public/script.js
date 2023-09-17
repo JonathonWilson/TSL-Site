@@ -24,7 +24,7 @@ const items = [
   { name: "Water Bottle", price: 200 },
   { name: "Gloves/Belts", price: 200 },
   { name: "Knife", price: 200 },
-  { name: "Nails", price: 750 },
+  { name: "Nails", price: 1000 },
   { name: "Code Locks", price: 1000 },
   { name: "Misc. Building Supplies", price: 500 },
   { category: "Storage" },
